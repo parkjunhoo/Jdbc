@@ -85,7 +85,7 @@ MySQL 드라이버 => https://dev.mysql.com/downloads/connector/j/
 
 JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다르게 작업)<br>
   jdbc코드를 실행하기 위해서 JVM이 찾을 수 있는 위치에 있어야한다.<br>
-  => [Build path] -> [Configure Build Path] -> 라이브러리탭탭 -> 클래스패스에 Add Jars 로 드라이버를 넣어준다.<br>
+  => [Build path] -> [Configure Build Path] -> 라이브러리탭 -> class path > Add external Jars 로 드라이버를 넣어준다.<br>
   => 참조 라이브러리로 드라이버가 추가됨.<br>
 
 
