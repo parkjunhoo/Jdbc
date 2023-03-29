@@ -381,6 +381,7 @@ ResultSet rs = stmt.executeQuery(sql);
 -모두 int를 리턴하므로 동일한 방법으로 처리<br>
 -리턴 되는 값이 0이면 처리되지 않았다는 의미<br>
 <br>
+
 #### 2) select 
 
 <br>
