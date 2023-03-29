@@ -48,14 +48,20 @@ JDBC API를 사용하려면 드라이버를 추가로 설치할 필요가 없습
 드라이버를 설치하여 설정하는 작업이 필요합니다.<br>
 <br>
 
-#### 드라이버 로딩 
+
+
+<hr>
+
+
+
+### 드라이버 로딩 
 
 드라이버 안에 클래스들이 패키지에 저장되어 있으므로 모두 로딩하지 않고 핵심 클래스만 메모리에 로딩<br>
 java.lang패키지의 class라는 클래스의 forName이라는 메소드를 이용해서 jdbc드라이버의 핵심 클래스를 메모리에 로딩 <br>
 핵심 클래스는 드라이버 클래스라 하며 이 드라이버 클래스는 어떤 DBMS(버전에 따라서도 달라짐)를 이용하냐에 따라 달라짐<br>
 
 [mySQL]
-구버전 -> com.mysql.jdbc.Driver (구버전으로 클래스를 올릴시 파기됬다는 경고가 뜬당,)<br> 
+구버전 -> com.mysql.jdbc.Driver <br> 
 신버전 -> com.mysql.cj.jdbc.Driver <br>
 
 [오라클]
@@ -82,4 +88,20 @@ JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다
   => [Build path] -> [Configure Build Path] -> 라이브러리탭탭 -> 클래스패스에 Add Jars 로 드라이버를 넣어준다.<br>
   => 참조 라이브러리로 드라이버가 추가됨.<br>
 
+
+
+### DB서버에 연결하기
+
+java.sql 패키지의 DriverManager 클래스를 이용해서 DB서버에 연결<br>
+DriverManager클래스는 JDBC드라이버를 관리하고 DB와 연결해서 Connection 객체를 생성함 <br>
+<br>
+Connection 인터페이스는 Statement , PreparedStatement , CallableStatement 객체를 생성하며, <br>
+주로 변경되지 않는 정적 SQL문을 실행할때 사용<br>
+커넥션 객체를 만들때는 <br>
+1. dbms가 설치된 컴퓨터 ip 주소 <br>
+2. dbms가 허용하는 포트 번호 <br>
+3. db계정 및 비밀번호<br>
+4. 사용하려는 db 이름<br>
+ 위 4가지 정보를 파라미터로 받는다. <br>
+<br>
 
