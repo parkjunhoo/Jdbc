@@ -102,6 +102,7 @@ Connection 인터페이스는 Statement , PreparedStatement , CallableStatement 
 2. dbms가 허용하는 포트 번호 <br>
 3. db계정 및 비밀번호<br>
 4. 사용하려는 db 이름<br>
- 위 4가지 정보를 파라미터로 받는다. <br>
+
+위 4가지 정보를 파라미터로 받는다. <br>
 <br>
 
