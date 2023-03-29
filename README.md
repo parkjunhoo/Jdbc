@@ -20,6 +20,10 @@ JDBC를 사용하여 데이터베이스에 접근하면, <br>
 
 ### JDBC 드라이버
 
+MySQL 드라이버 => https://dev.mysql.com/downloads/connector/j/
+
+
+
 JDBC 드라이버는 JDBC API를 이용하여 데이터베이스와 연동할 수 있도록,
 <br>
 특정 데이터베이스 관리 시스템(DBMS)에 대한 드라이버를 제공하는 소프트웨어 모듈입니다.
