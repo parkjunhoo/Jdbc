@@ -351,4 +351,14 @@ public class DeleteTest {
 </details>
 
 
+-executeQuery<br>
+select 명령문을 실행 <br>
+실행한 후 조회된 테이블을 리턴<br>
+DBMS에서 조회된 테이블을<br>
+자바에서 사용할 수 있도록 만들어서 제공되는 객체 (ResultSet)<br>
+실제로는 어떤 DBMS가 사용되냐에 따라 다른 ResultSet의 하위 객체가 리턴된다.
+<br>
 
+```java
+int result = stmt.executeUpdate("sql문");
+```
