@@ -65,7 +65,7 @@ java.lang패키지의 class라는 클래스의 forName이라는 메소드를 이
 신버전 -> com.mysql.cj.jdbc.Driver <br>
 
 [오라클]
-orcle.jdbc.driver.OracleDriver
+oracle.jdbc.driver.OracleDriver
 
 [문법]
 Class.forName("핵심클래스명") <br>
