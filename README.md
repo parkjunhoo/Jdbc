@@ -54,7 +54,7 @@ JDBC API를 사용하려면 드라이버를 추가로 설치할 필요가 없습
 
 
 
-### 드라이버 로딩 
+### 1.드라이버 로딩 
 
 드라이버 안에 클래스들이 패키지에 저장되어 있으므로 모두 로딩하지 않고 핵심 클래스만 메모리에 로딩<br>
 java.lang패키지의 class라는 클래스의 forName이라는 메소드를 이용해서 jdbc드라이버의 핵심 클래스를 메모리에 로딩 <br>
@@ -90,7 +90,7 @@ JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다
 
 
 
-### DB서버에 연결하기
+### 2.DB서버에 연결하기
 
 java.sql 패키지의 DriverManager 클래스를 이용해서 DB서버에 연결<br>
 DriverManager클래스는 JDBC드라이버를 관리하고 DB와 연결해서 Connection 객체를 생성함 <br>
@@ -107,7 +107,8 @@ Connection 인터페이스는 Statement , PreparedStatement , CallableStatement 
 ```java
 Connection conn = DriverManager.getConnection("연결문자열","사용자","비밀번호");
 //연결문자열
-//oracle => jdbc:oracle:thin:@IP주소:포트/DB이름
+//oracle  =>  jdbc:oracle:thin:@IP주소:포트/DB이름
+//mysql   =>  jdbc:mysql://ip주소:포트/DB
 ```
 <br>
 
