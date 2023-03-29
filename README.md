@@ -394,7 +394,8 @@ ResultSet 객체 내부에서 위차값에 대한 정보를 갖고 있는 Cursor
 
 ```java
 while(rs.next)){
-
+	System.out.print(rs.getString("id"));
+	System.out.println(rs.getString(1));
 }
 ```
 
@@ -404,4 +405,4 @@ ResultSet의 getXXXX메소드를 이용해서 컬럼값을 읽는다. 컬럼의 
 <br>
 char , varchar => String <br>
 getString("컬럼명") or getString(컬럼의 순서를 나타내는 index) <br>
-(index는 정의된 컬럼의 순서가 아닌 조회 결과로 만들어진 컬럼의 순서이다.)<br>
+(index는 정의된 컬럼의 순서가 아닌 조회 결과로 만들어진 컬럼의 순서이다. 1부터 시작)<br>
