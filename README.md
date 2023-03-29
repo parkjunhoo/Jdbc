@@ -55,7 +55,7 @@ java.lang패키지의 class라는 클래스의 forName이라는 메소드를 이
 핵심 클래스는 드라이버 클래스라 하며 이 드라이버 클래스는 어떤 DBMS(버전에 따라서도 달라짐)를 이용하냐에 따라 달라짐<br>
 
 [mySQL]
-구버전 -> com.mysql.jdbc.Driver <br>
+구버전 -> com.mysql.jdbc.Driver (구버전으로 클래스를 올릴시 파기됬다는 오류가 뜬당,)<br> 
 신버전 -> com.mysql.cj.jdbc.Driver <br>
 
 [오라클]
