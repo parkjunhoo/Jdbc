@@ -403,6 +403,22 @@ while(rs.next)){
 - 한 번에 하나의 컬럼만 읽을 수 있다.<br>
 ResultSet의 getXXXX메소드를 이용해서 컬럼값을 읽는다. 컬럼의 타입에 따라 다른 메소드를 이용 <br>
 <br>
+
+(index는 정의된 컬럼의 순서가 아닌 조회 결과로 만들어진 컬럼의 순서이다. 1부터 시작)<br>
+
+#### getString()
+
 char , varchar => String <br>
 getString("컬럼명") or getString(컬럼의 순서를 나타내는 index) <br>
-(index는 정의된 컬럼의 순서가 아닌 조회 결과로 만들어진 컬럼의 순서이다. 1부터 시작)<br>
+
+
+
+#### getInt()
+
+int => int <br>
+getInt("컬럼명") or getInt(컬럼의 순서를 나타내는 index) <br>
+
+#### getdate()
+
+date => java.sql.Date <br>
+getDate("컬럼명") or getDate(컬럼의 순서를 나타내는 index) <br>
