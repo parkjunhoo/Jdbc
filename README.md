@@ -358,7 +358,7 @@ DBMS에서 조회된 테이블을<br>
 <br>
 
 ```java
-int result = stmt.executeUpdate("sql문");
+ResultSet rs = stmt.executeQuery(sql);
 ```
 
 
