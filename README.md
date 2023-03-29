@@ -118,8 +118,8 @@ ex:<br>
 ```java
 public static void main(String[] args) throws SQLException {
 		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
-		String user = "exam";
-		String password = "exam";
+		String user = "유저명,,,,";
+		String password = "비밀번호,.,.";
 		
 		try {
 			//1. 드라이버 로딩
