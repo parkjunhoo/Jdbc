@@ -172,8 +172,32 @@ Connection 객체의 메소드를 이용해서 생성<br>
 <br>
 <br>
 
-1) Statement 객체를 이용하기
-2) PreparedStatement 객체를 이용하기
+
+1) Statement 객체를 이용하기<br>
+
+```java
+Statement stmt = conn.createStatement();
+```
+<br>
+Statement객체는 어떤 드라이버가 로딩되어 있냐에 따라 다른 객체 리턴.<br>
+
+<br>
+2) PreparedStatement 객체를 이용하기<br>
+
+-executeUpdate<br>
+insert , update , delete  명령문을 실행<br>
+매개변수에 전달된 sql문을 실행 <br>
+실행 결과로 몇 개의 row에 되었는지 리턴<br>
+<br>
+
+```java
+int result = stmt.executeUpdate("sql문");
+```
+
+<br>
+
+
+
 
 
 
