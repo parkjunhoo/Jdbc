@@ -394,8 +394,8 @@ ResultSet 객체 내부에서 위차값에 대한 정보를 갖고 있는 Cursor
 
 ```java
 while(rs.next)){
-	System.out.print(rs.getString("id"));
-	System.out.println(rs.getString(1));
+	System.out.print(rs.getString("id")); //컬럼명이 id인 데이터를 조회
+	System.out.println(rs.getString(1)); //컬럼 인덱스가 1인 데이터를 조회
 }
 ```
 
