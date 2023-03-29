@@ -199,7 +199,8 @@ int result = stmt.executeUpdate("sql문");
 
 <details>
     <summary>연습 코드</summary>
-    	```java
+	
+```java
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -242,8 +243,8 @@ public class InsertTest {
 	}
 
 }
-
-	```
+```
+	
 </details>
 
 
