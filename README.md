@@ -94,6 +94,7 @@ JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다
 
 java.sql 패키지의 DriverManager 클래스를 이용해서 DB서버에 연결<br>
 DriverManager클래스는 JDBC드라이버를 관리하고 DB와 연결해서 Connection 객체를 생성함 <br>
+[ 어떤 DBMS 드라이버가 로딩 되어 있냐에 따라 다른 Connection 객체가 리턴(다형성 적용) ] <br>
 <br>
 Connection 인터페이스는 Statement , PreparedStatement , CallableStatement 객체를 생성하며, <br>
 주로 변경되지 않는 정적 SQL문을 실행할때 사용<br>
