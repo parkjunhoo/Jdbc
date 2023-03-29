@@ -148,3 +148,32 @@ public class ConnectionTest {
 
 <br>
 
+### 3.Statement 객체 생성
+
+<br>
+SQL문을 실행할 수 있는 기능을 구현한 클래스<br>
+Connection 객체의 메소드를 이용해서 생성<br>
+<br>
+
+[상속구조] <br>
+  +---------------+<br>
+  | Statement	  |		-정적 SQL문을 실행할때 사용 (보안취약)<br>
+  +---------------+<br>
+ 	^<br>
+	|<br>
++--------------------+<br>
+| PreparedStatement  |		-동적 SQL문을 실행할때 사용 (시큐어코딩에 적합한 방식, 캐시사용)<br>
++--------------------+<br>
+	 ^<br>
+	 |<br>
++--------------------+<br>
+| CallableStatement  |		-각 DBMS에 특화된 SQL문을 실행하기 위해 사용하는 객체<br>
++--------------------+<br>
+<br>
+<br>
+
+1) Statement 객체를 이용하기
+2) PreparedStatement 객체를 이용하기
+
+
+
