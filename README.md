@@ -112,4 +112,25 @@ Connection conn = DriverManager.getConnection("연결문자열","사용자","비
 //타입존 설정 jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC
 ```
 <br>
+ex:
+```java
+public static void main(String[] args) throws SQLException {
+		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
+		String user = "exam";
+		String password = "exam";
+		
+		try {
+			//1. 드라이버 로딩
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("드라이버 로딩 성공");
+			//2. DB 서버에 접속
+			Connection conn = DriverManager.getConnection(url,user,password);
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println("드라이버로딩실패");
+			e.printStackTrace();
+		}
+	}
+```
+<br>
 
