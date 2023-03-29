@@ -103,6 +103,11 @@ Connection 인터페이스는 Statement , PreparedStatement , CallableStatement 
 3. db계정 및 비밀번호<br>
 4. 사용하려는 db 이름<br>
 
-위 4가지 정보를 파라미터로 받는다. <br>
+위 4가지 정보가 필요하다. <br>
+```java
+Connection conn = DriverManager.getConnection("연결문자열","사용자","비밀번호");
+//연결문자열
+//oracle => jdbc:oracle:thin:@IP주소:포트/DB이름
+```
 <br>
 
