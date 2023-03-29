@@ -184,7 +184,8 @@ Statement stmt = conn.createStatement();
 Statement객체는 어떤 드라이버가 로딩되어 있냐에 따라 다른 객체 리턴.<br>
 
 <br>
-# -executeUpdate<br>
+
+### -executeUpdate<br>
 
 insert , update , delete  명령문을 실행<br>
 매개변수에 전달된 sql문을 실행 <br>
@@ -352,7 +353,7 @@ public class DeleteTest {
 </details>
 
 
-# -executeQuery<br>
+### -executeQuery<br>
 
 select 명령문을 실행 <br>
 실행한 후 조회된 테이블을 리턴<br>
@@ -366,4 +367,6 @@ ResultSet rs = stmt.executeQuery(sql);
 ```
 
 
-2) PreparedStatement 객체를 이용하기<br>
+## 2) PreparedStatement 객체를 이용하기
+
+<br>
