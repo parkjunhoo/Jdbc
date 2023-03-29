@@ -21,6 +21,7 @@ JDBC를 사용하여 데이터베이스에 접근하면, <br>
 
 ### JDBC 드라이버
 
+(수업시간엔 수동으로 추가했찌만 자바에도 Nuget같은 Maven Gradle이 있다고 들엇다 아마 이걸로 하지않을까는앞으로는)<br>
 -드라이버를 제조사 홈페이지에서 다운로드
 MySQL 드라이버 => https://dev.mysql.com/downloads/connector/j/
 
