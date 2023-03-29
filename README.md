@@ -426,7 +426,7 @@ getDate("컬럼명") or getDate(컬럼의 순서를 나타내는 index) <br>
 
 <br><br>
 <details>
-    <summary>수업시간 연습과제 간단한 로그인처리 만들어보기 (delete)</summary>
+    <summary>수업시간 연습과제 간단한 로그인처리 만들어보기</summary>
 	
 ```java
 package Jdbc.basic;
@@ -471,6 +471,244 @@ public class LoginTest {
 }
 
 ```
+	
+</details>
+
+<br><br><br>
+
+
+<br><br>
+<details>
+    <summary>수업시간 연습과제 간단한 crud 만들어보기</summary>
+	
+```java
+package Jdbc.basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class InsertTest_Ver2 {
+	public static void main(String[] args) {
+		
+		Scanner key = new Scanner(System.in);
+		InsertTest_Ver2 obj = new InsertTest_Ver2();
+		
+		System.out.print("아이디:");
+		String id = key.next();
+		
+		System.out.print("패스워드:");
+		String pass = key.next();
+		
+		System.out.print("이름:");
+		String name = key.next();
+		
+		System.out.print("주소:");
+		String addr = key.next();
+		
+		System.out.print("메모:");
+		String memo = key.next();
+		
+		obj.insert(id,pass,name,addr,memo);
+	}
+	
+	public void insert(String id , String pass ,String name, String addr , String memo) {
+		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
+		String user = "exam";
+		String password = "exam";
+		String sql = String.format("insert into customer values('%s','%s','%s','%s',sysdate(),1000,'%s')", id,pass,name,addr,memo);
+		
+		try {
+			// 1. 드라이버 로딩
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("드라이버 로딩 성공!");
+			
+			// 2. DB서버 접속
+			Connection conn = DriverManager.getConnection(url,user,password);
+			System.out.println("커넥션 성공"+conn);
+			
+			// 3. SQL을 실행하기 위해서 Statement객체를 생성하기
+			Statement stmt = conn.createStatement();
+			System.out.println("Statement객체"+stmt);
+			
+			// 4. SQL문을 실행
+			int result = stmt.executeUpdate(sql);
+			
+			// 5. 결과 처리
+			System.out.println(result);
+			
+		}catch(ClassNotFoundException e) {
+			System.out.println("드라이버 로딩 실패");
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
+}
+
+```
+	
+	
+```java
+package Jdbc.basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+
+public class SelectTest_Ver2 {
+
+	public void select(String addr) {
+		
+		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
+		String user = "exam";
+		String password = "exam";
+		String sql = String.format("select * from customer where addr = '%s'",addr);
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("driver loading success.");
+
+			Connection conn = DriverManager.getConnection(url, user, password);
+			System.out.println("connection success");
+			
+			Statement sm = conn.createStatement();
+			ResultSet rs = sm.executeQuery(sql);
+			
+			while(rs.next()) {
+				System.out.print(rs.getString(1)+"\t");
+				System.out.print(rs.getString(2)+"\t");
+				System.out.print(rs.getString(3)+"\t");
+				System.out.print(rs.getString(4)+"\t");
+				System.out.print(rs.getDate(5)+"\t");
+				System.out.print(rs.getInt(6)+"\t");
+				System.out.println(rs.getString(7)+"\t");
+			}
+		} catch (ClassNotFoundException e) {
+			System.out.println("driver loading failed.");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		SelectTest_Ver2 obj = new SelectTest_Ver2();
+		obj.select("서울특별시");
+		
+	}
+
+}
+
+```
+	
+	
+```java
+package Jdbc.basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+
+public class UpdateTest_Ver2 {
+
+	public void update(String id) {
+		
+		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
+		String user = "exam";
+		String password = "exam";
+		String sql = String.format("update customer set addr = '%s' where id = '%s'" , id);
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("driver loading success.");
+
+			Connection conn = DriverManager.getConnection(url, user, password);
+			System.out.println("connection success");
+
+			Statement sm = conn.createStatement();
+
+			int result = sm.executeUpdate(sql);
+			System.out.println(result);
+		} catch (ClassNotFoundException e) {
+			System.out.println("driver loading failed.");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		UpdateTest_Ver2 obj = new UpdateTest_Ver2();
+		obj.update("lee");
+		
+	}
+
+}
+
+```
+	
+	
+```java
+package Jdbc.basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+
+public class DeleteTest_Ver2 {
+
+	public void delete(String id) {
+		
+		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
+		String user = "exam";
+		String password = "exam";
+		String sql = String.format("delete from customer where id = '%s'" , id);
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("driver loading success.");
+
+			Connection conn = DriverManager.getConnection(url, user, password);
+			System.out.println("connection success");
+
+			Statement sm = conn.createStatement();
+
+			int result = sm.executeUpdate(sql);
+			System.out.println(result);
+		} catch (ClassNotFoundException e) {
+			System.out.println("driver loading failed.");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		DeleteTest_Ver2 obj = new DeleteTest_Ver2();
+		obj.delete("id");
+		
+	}
+
+}
+
+```
+	
 	
 </details>
 
