@@ -198,9 +198,8 @@ int result = stmt.executeUpdate("sql문");
 
 <br>
 
-
 <details>
-    <summary>연습 코드 (insert)</summary>
+    <summary style="color:blue">연습 코드 (insert)</summary>
 	
 ```java
 
