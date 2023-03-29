@@ -79,9 +79,9 @@ Class.forName("orcle.jdbc.driver.OracleDriver") <br>
 -드라이버를 제조사 홈페이지에서 다운로드
 MySQL 드라이버 => https://dev.mysql.com/downloads/connector/j/
 
--오라클
-설치폴더에서 사용하거나 오라클 사이트에서 다운로드
-
+-오라클 드라이버=> C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib <br>
+설치폴더에서 사용하거나 오라클 사이트에서 다운로드<br>
+<br>
 
 JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다르게 작업)<br>
   jdbc코드를 실행하기 위해서 JVM이 찾을 수 있는 위치에 있어야한다.<br>
