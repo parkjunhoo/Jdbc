@@ -425,7 +425,7 @@ date => java.sql.Date <br>
 getDate("컬럼명") or getDate(컬럼의 순서를 나타내는 index) <br>
 
 
-
+<br><br>
 <details>
     <summary>수업시간 연습과제 간단한 로그인처리 만들어보기 (delete)</summary>
 	
@@ -474,3 +474,5 @@ public class LoginTest {
 ```
 	
 </details>
+
+<br><br><br>
