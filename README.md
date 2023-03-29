@@ -112,7 +112,9 @@ Connection conn = DriverManager.getConnection("연결문자열","사용자","비
 //타입존 설정 jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC
 ```
 <br>
-ex:
+
+ex:<br>
+
 ```java
 public static void main(String[] args) throws SQLException {
 		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
@@ -132,5 +134,6 @@ public static void main(String[] args) throws SQLException {
 		}
 	}
 ```
+
 <br>
 
