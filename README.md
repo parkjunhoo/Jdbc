@@ -173,7 +173,7 @@ Connection 객체의 메소드를 이용해서 생성<br>
 <br>
 
 
-## 1) Statement 객체를 이용하기
+### 1) Statement 객체를 이용하기
 
 <br>
 
@@ -353,7 +353,7 @@ public class DeleteTest {
 </details>
 
 
-### -executeQuery<br>
+#### -executeQuery<br>
 
 select 명령문을 실행 <br>
 실행한 후 조회된 테이블을 리턴<br>
@@ -367,6 +367,41 @@ ResultSet rs = stmt.executeQuery(sql);
 ```
 
 
-## 2) PreparedStatement 객체를 이용하기
+### 2) PreparedStatement 객체를 이용하기
 
 <br>
+
+
+
+## 5.결과에 대한 처리
+
+#### 1) insert , delete , update
+
+<br>
+-모두 int를 리턴하므로 동일한 방법으로 처리<br>
+-리턴 되는 값이 0이면 처리되지 않았다는 의미<br>
+<br>
+#### 2) select 
+
+<br>
+select문을 실행하고 보여지는 2차원 표의 데이터를 자바에서 사용할 수 있도록 만들어진 객체인 ResultSet <br>
+ResultSet 내부에 있는 테이블 데이터를 읽기 위해서 ResultSet이 제공하는 메소드를 이용해서 작업<br>
+ResultSet 객체 내부에서 위차값에 대한 정보를 갖고 있는 Cursor 객체를 다음 레코드로 이동하면서 데이터를 읽어야한다<br>
+
+-레코드의 갯수만큼 반복 작업을 수행<br>
+-ResultSet의 next메소드를 이용해서 다음 레코드로 커서를 이동하여 작업. next메소드는 Cursor를 이동하고<br>
+다음 레코드가 있으면 true를 리턴하고 없으면 false를 리턴한다.<br>
+
+```java
+while(rs.next)){
+
+}
+```
+
+<br>
+- 한 번에 하나의 컬럼만 읽을 수 있다.<br>
+ResultSet의 getXXXX메소드를 이용해서 컬럼값을 읽는다. 컬럼의 타입에 따라 다른 메소드를 이용 <br>
+<br>
+char , varchar => String <br>
+getString("컬럼명") or getString(컬럼의 순서를 나타내는 index) <br>
+(index는 정의된 컬럼의 순서가 아닌 조회 결과로 만들어진 컬럼의 순서이다.)<br>
