@@ -109,6 +109,7 @@ Connection conn = DriverManager.getConnection("연결문자열","사용자","비
 //연결문자열
 //oracle  =>  jdbc:oracle:thin:@IP주소:포트/DB이름
 //mysql   =>  jdbc:mysql://ip주소:포트/DB
+//타입존 설정 jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC
 ```
 <br>
 
