@@ -19,7 +19,7 @@ JDBC를 사용하여 데이터베이스에 접근하면, <br>
 <hr>
 
 
-### JDBC 드라이버
+## JDBC 드라이버
 
 <br>
 JDBC 드라이버는 JDBC API를 이용하여 데이터베이스와 연동할 수 있도록,
@@ -54,7 +54,7 @@ JDBC API를 사용하려면 드라이버를 추가로 설치할 필요가 없습
 
 
 
-### 1.드라이버 로딩 
+## 1.드라이버 로딩 
 
 드라이버 안에 클래스들이 패키지에 저장되어 있으므로 모두 로딩하지 않고 핵심 클래스만 메모리에 로딩<br>
 java.lang패키지의 class라는 클래스의 forName이라는 메소드를 이용해서 jdbc드라이버의 핵심 클래스를 메모리에 로딩 <br>
@@ -90,7 +90,7 @@ JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다
 
 
 
-### 2.DB서버에 연결하기
+## 2.DB서버에 연결하기
 
 java.sql 패키지의 DriverManager 클래스를 이용해서 DB서버에 연결<br>
 DriverManager클래스는 JDBC드라이버를 관리하고 DB와 연결해서 Connection 객체를 생성함 <br>
@@ -148,7 +148,7 @@ public class ConnectionTest {
 
 <br>
 
-### 3.Statement 객체 생성
+## 3.Statement 객체 생성
 
 <br>
 SQL문을 실행할 수 있는 기능을 구현한 클래스<br>
@@ -173,7 +173,9 @@ Connection 객체의 메소드를 이용해서 생성<br>
 <br>
 
 
-1) Statement 객체를 이용하기<br>
+## 1) Statement 객체를 이용하기
+
+<br>
 
 ```java
 Statement stmt = conn.createStatement();
@@ -182,7 +184,8 @@ Statement stmt = conn.createStatement();
 Statement객체는 어떤 드라이버가 로딩되어 있냐에 따라 다른 객체 리턴.<br>
 
 <br>
--executeUpdate<br>
+# -executeUpdate<br>
+
 insert , update , delete  명령문을 실행<br>
 매개변수에 전달된 sql문을 실행 <br>
 실행 결과로 몇 개의 row에 되었는지 리턴<br>
@@ -349,7 +352,8 @@ public class DeleteTest {
 </details>
 
 
--executeQuery<br>
+# -executeQuery<br>
+
 select 명령문을 실행 <br>
 실행한 후 조회된 테이블을 리턴<br>
 DBMS에서 조회된 테이블을<br>
