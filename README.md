@@ -21,21 +21,6 @@ JDBC를 사용하여 데이터베이스에 접근하면, <br>
 
 ### JDBC 드라이버
 
-(수업시간엔 수동으로 추가했찌만 자바에도 Nuget같은 Maven Gradle이 있다고 들엇다 아마 이걸로 하지않을까는 나중에는)<br>
-
--드라이버를 제조사 홈페이지에서 다운로드
-MySQL 드라이버 => https://dev.mysql.com/downloads/connector/j/
-
--오라클
-설치폴더에서 사용하거나 오라클 사이트에서 다운로드
-
-
-JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다르게 작업)<br>
-  jdbc코드를 실행하기 위해서 JVM이 찾을 수 있는 위치에 있어야한다.<br>
-  => [Build path] -> [Configure Build Path] -> 라이브러리탭탭 -> 클래스패스에 Add Jars 로 드라이버를 넣어준다.<br>
-  => 참조 라이브러리로 드라이버가 추가됨.<br>
-  
-
 <br>
 JDBC 드라이버는 JDBC API를 이용하여 데이터베이스와 연동할 수 있도록,
 <br>
@@ -63,5 +48,38 @@ JDBC API를 사용하려면 드라이버를 추가로 설치할 필요가 없습
 드라이버를 설치하여 설정하는 작업이 필요합니다.<br>
 <br>
 
+#### 드라이버 로딩 
+
+드라이버 안에 클래스들이 패키지에 저장되어 있으므로 모두 로딩하지 않고 핵심 클래스만 메모리에 로딩<br>
+java.lang패키지의 class라는 클래스의 forName이라는 메소드를 이용해서 jdbc드라이버의 핵심 클래스를 메모리에 로딩 <br>
+핵심 클래스는 드라이버 클래스라 하며 이 드라이버 클래스는 어떤 DBMS(버전에 따라서도 달라짐)를 이용하냐에 따라 달라짐<br>
+
+[mySQL]
+구버전 -> com.mysql.jdbc.Driver <br>
+신버전 -> com.mysql.cj.jdbc.Driver <br>
+
+[오라클]
+orcle.jdbc.driver.OracleDriver
+
+[문법]
+Class.forName("핵심클래스명") <br>
+<br>
+ex:) <br>
+Class.forName("com.mysql.cj.jdbc.Driver") <br>
+Class.forName("orcle.jdbc.driver.OracleDriver") <br>
+
+(수업시간엔 수동으로 추가했찌만 자바에도 Nuget같은 Maven Gradle이 있다고 들엇다 아마 이걸로 하지않을까는 나중에는)<br>
+
+-드라이버를 제조사 홈페이지에서 다운로드
+MySQL 드라이버 => https://dev.mysql.com/downloads/connector/j/
+
+-오라클
+설치폴더에서 사용하거나 오라클 사이트에서 다운로드
+
+
+JVM이 인식할 수 있는 위치로 드라이버를 가져오기(app - web 다르게 작업)<br>
+  jdbc코드를 실행하기 위해서 JVM이 찾을 수 있는 위치에 있어야한다.<br>
+  => [Build path] -> [Configure Build Path] -> 라이브러리탭탭 -> 클래스패스에 Add Jars 로 드라이버를 넣어준다.<br>
+  => 참조 라이브러리로 드라이버가 추가됨.<br>
 
 
