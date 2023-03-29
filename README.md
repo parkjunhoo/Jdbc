@@ -198,7 +198,7 @@ int result = stmt.executeUpdate("sql문");
 
 
 <details>
-    <summary>연습 코드</summary>
+    <summary>연습 코드 (insert)</summary>
 	
 ```java
 
@@ -250,7 +250,7 @@ public class InsertTest {
 <br>
 
 <details>
-    <summary>연습 코드 2</summary>
+    <summary>연습 코드 2 (update)</summary>
 	
 ```java
 package Jdbc.basic;
@@ -299,7 +299,7 @@ public class UpdateTest {
 <br>
 
 <details>
-    <summary>연습 코드 3</summary>
+    <summary>연습 코드 3 (delete)</summary>
 	
 ```java
 package Jdbc.basic;
