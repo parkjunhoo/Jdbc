@@ -397,6 +397,18 @@ PreparedStatement ptmt = con.preparedStatement(sql);
 String sql = "insert into customer values('?','?','?','?',sysdate(),1000,'?')";
 ```
 
+3. ?에 대한 값을 설정 <br>
+PreparedStatement의 setXXX 메소드를 이용해서 설정 <br>
+setXXX 메소드는 컬럼의 타입과 맞는 setter 메소드를 선택해서 작업 <br>
+(ResultSet의 getter메소드 타입 매칭과 동일)
+
+```java
+ptmt.setString(1, "bts") //=> 첫번째 물음표 자리에 "bts"를 셋팅 (인덱스 1부터 시작)
+```
+
+```java
+ptmt.setInt(2, 2000) //=> 두번째 물음표 자리에 2000를 셋팅
+```
 
 
 <br>
