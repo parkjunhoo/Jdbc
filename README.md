@@ -368,6 +368,37 @@ ResultSet rs = stmt.executeQuery(sql);
 
 ### 2) PreparedStatement 객체를 이용하기
 
+Connection 객체에 정의된 preparedStatement메소드를 이용해서 생성 <br>
+캐시사용 <br>
+
+[실행흐름] <br>
+쿼리 문장분석 -> 컴파일 -> 실행 <br>
+<br>
+[사용방법]<br>
+Statement는 SQL문을 실행하는 과정에서 위의 실행흐름에 명시되어 있는 과정을<br>
+매번 반복해서 처리하고 있지만,<br>
+PreparedStatement객체는 한번만 작업한다.<br>
+캐시에서 꺼내서 사용한다. <br>
+PreparedStatement객체가 sql문을 실행하는 방식이 미리 SQL문을 파싱해놓고 <br>
+외부에서 입력 받는 값들을 전달해서 최종 코드가 실행될 수 있도록 처리 <br>
+<br>
+1. sql문을 전달하며 PreparedStatement 객체를 생성 <br>
+=> Connection 객체의 preparedStatement메소드를 호출할 때 sql문을 전달해야한다.<br>
+
+```java
+PreparedStatement ptmt = con.preparedStatement(sql);
+```
+
+<br>
+2. sql문을 작성할떄, 외부에서 입력 받아서 처리할 부분을 ?로 대체하여 표시한다. <br>
+(?는 컬럼명에 줄 수 없고 값의 자리에만 사용할 수 있다.)<br>
+
+```java
+String sql = "insert into customer values('?','?','?','?',sysdate(),1000,'?')";
+```
+
+
+
 <br>
 
 
