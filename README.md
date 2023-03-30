@@ -413,7 +413,98 @@ ptmt.setInt(2, 2000) //=> 두번째 물음표 자리에 2000를 셋팅
 
 <br>
 
+executeUpdate , executeQuery  <br>
+=> Statement 객체와 메소드명은 동일하지만 매개변수가 없는 메소드를 사용 <br>
+(이미 SQL을 객체 생성과 동시에 전달하기 떄문에 다시 전달하지 않는다.) <br>
 
+
+<br><br>
+<details>
+    <summary>수업시간 PreparedStatement 연</summary>
+	
+```java
+package Jdbc.basic;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class PreparedStatementInsertTest {
+	public static void main(String[] args) {
+		
+		Scanner key = new Scanner(System.in);
+		InsertTest_Ver2 obj = new InsertTest_Ver2();
+		
+		System.out.print("아이디:");
+		String id = key.next();
+		
+		System.out.print("패스워드:");
+		String pass = key.next();
+		
+		System.out.print("이름:");
+		String name = key.next();
+		
+		System.out.print("주소:");
+		String addr = key.next();
+		
+		System.out.print("메모:");
+		String memo = key.next();
+		
+		obj.insert(id,pass,name,addr,memo);
+	}
+	
+	public void insert(String id , String pass ,String name, String addr , String memo) {
+		String url = "jdbc:mysql://localhost:3306/jdbc?serverTimezone=UTC";
+		String user = "exam";
+		String password = "exam";
+		String sql = "insert into customer values('?','?','?','?',sysdate(),1000,'?')";
+		
+		try {
+			// 1. 드라이버 로딩
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("드라이버 로딩 성공!");
+			
+			// 2. DB서버 접속
+			Connection conn = DriverManager.getConnection(url,user,password);
+			System.out.println("커넥션 성공"+conn);
+			
+			// 3. SQL을 실행하기 위해서 PreparedStatement객체를 생성하기
+			PreparedStatement ptmt = conn.prepareStatement(sql);
+			System.out.println("PreparedStatement객체"+ptmt);
+			
+			// ? 에 값 전달해주기.
+			ptmt.setString(1, id);
+			ptmt.setString(2, pass);
+			ptmt.setString(3, name);
+			ptmt.setString(4, addr);
+			ptmt.setString(5, memo);
+			
+			// 4. SQL문을 실행
+			int result = ptmt.executeUpdate();
+			
+			// 5. 결과 처리
+			System.out.println(result);
+			
+		}catch(ClassNotFoundException e) {
+			System.out.println("드라이버 로딩 실패");
+			e.printStackTrace();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
+}
+
+```
+	
+</details>
+
+
+<br>
 
 ## 5.결과에 대한 처리
 
