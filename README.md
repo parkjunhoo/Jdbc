@@ -847,3 +847,21 @@ public class DeleteTest_Ver2 {
 </details>
 
 <br><br><br>
+
+
+## 6.자원반납
+
+클라이언트가 점유해서 사용하던 자원을 반납해야한다. <br>
+Connection , Statement , ResultSet 까지 모든 자원을 반납.<br>
+close()메소드를 이용해서 자원반납. <br>
+만들어진 순서가 아니라 제일 마지막에 생성된 객체부터 반납 (역순) <br>
+
+<br>
+
+## DAO (Data Access Object) 패턴
+
+비지니스로직과 데이터베이스 액세스 하는 코드를 분리 <br>
+DBMS , 파일 , JSON등 다양한 형식의 저장장치로 데이터를 관리하더라도 <br>
+기존에 잘 실행되는 코드는 변경하지 않도록 관리 <br>
+DAO패턴을 적용하기 위해 상위인터페이스를 작성 <br>
+
