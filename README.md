@@ -420,7 +420,7 @@ executeUpdate , executeQuery  <br>
 
 <br><br>
 <details>
-    <summary>수업시간 PreparedStatement 연</summary>
+    <summary>수업시간 PreparedStatement 연습 </summary>
 	
 ```java
 package Jdbc.basic;
